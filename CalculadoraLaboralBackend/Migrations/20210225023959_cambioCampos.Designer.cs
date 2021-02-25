@@ -4,14 +4,16 @@ using CalculadoraLaboralBackend.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CalculadoraLaboralBackend.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210225023959_cambioCampos")]
+    partial class cambioCampos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -26,33 +28,33 @@ namespace CalculadoraLaboralBackend.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("cantidadDeHoras")
+                    b.Property<int>("CantidadDeHoras")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("fechaDeFinalizacion")
+                    b.Property<DateTime>("FechaFinal")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("fechaDeInicio")
+                    b.Property<DateTime>("FechaInicial")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("horaDeFinalizacion")
+                    b.Property<int>("HoraFinal")
                         .HasColumnType("int");
 
-                    b.Property<int>("horaDeInicio")
+                    b.Property<int>("HoraInicial")
                         .HasColumnType("int");
 
-                    b.Property<int>("semanaDelAno")
+                    b.Property<int>("SemanaDelAno")
                         .HasColumnType("int");
 
-                    b.Property<string>("servicioRealizado")
+                    b.Property<string>("ServicioRealizado")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("tecnico")
+                    b.Property<string>("Tecnico")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("tipoDeHora")
+                    b.Property<string>("TipoDeHoras")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
